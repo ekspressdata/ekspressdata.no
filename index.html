@@ -10,7 +10,7 @@
 <title>EkspressData — Datakonsulent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -744,7 +744,7 @@
   }
   footer a:hover { color: var(--orange); }
 
-  .cf-turnstile { margin-top: 0.75rem; }
+  .h-captcha { margin-top: 0.75rem; }
 
   /* PROJECTS BULLET LIST */
   .projects-bullets {
@@ -1039,10 +1039,10 @@
             <label for="melding">Hva trenger du hjelp med?</label>
             <textarea id="melding" name="melding" placeholder="Hva er problemet? Jo mer konkret, jo bedre — men det holder med én setning." required></textarea>
           </div>
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAADcObU_UyrS4xGj3" data-theme="light"></div>
+          <div class="h-captcha" data-sitekey="829c0816-ec7a-4b6c-b768-1b9428568f2a"></div>
           <button type="submit" class="form-submit">Send henvendelse →</button>
           <p class="form-note">Ingen forpliktelse. Jeg svarer vanligvis innen én arbeidsdag.</p>
-          <p class="form-note" style="margin-top: 0.4rem;">Beskyttet av Cloudflare Turnstile. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color: var(--gray-mid);">Personvernregler</a>.</p>
+          <p class="form-note" style="margin-top: 0.4rem;">Beskyttet av hCaptcha. <a href="https://hcaptcha.com/privacy" target="_blank" style="color: var(--gray-mid);">Personvernregler</a>.</p>
         </form>
       </div>
     </div>
