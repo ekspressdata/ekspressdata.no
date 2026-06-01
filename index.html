@@ -7,7 +7,7 @@
 <meta name="keywords" content="datakonsulent, data consultant, ETL, Python, automatisering, automation, datakvalitet, data quality, systemintegrasjon, system integration, RPA, Stavanger, matrikkelen, dataengineering, MVP, nettsider, websites">
 <meta property="og:title" content="EkspressData — Datakonsulent">
 <meta property="og:description" content="EkspressData — selvstendig datakonsulent med spesialkompetanse på ETL, automatisering, Python og system-til-system konvertering. Dokumenterte resultater fra dataprosjekter i offentlig og privat sektor.">
-<title>EkspressData — Datakonsulent</title>
+<title id="page-title">EkspressData — Datakonsulent</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f2044'/><text x='5' y='21' font-family='Arial Black,sans-serif' font-weight='900' font-size='15' fill='white'>E</text><text x='16' y='21' font-family='Arial Black,sans-serif' font-weight='900' font-size='15' fill='%2306d6a0'>D</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1107,6 +1107,7 @@
   // ── i18n ──────────────────────────────────────────────────────────
   const translations = {
     no: {
+      page_title: 'EkspressData — Datakonsulent',
       nav_about: 'Om',
       nav_projects: 'Prosjekter',
       nav_services: 'Tjenester',
@@ -1198,6 +1199,7 @@
     },
 
     en: {
+      page_title: 'EkspressData — Data Consultant',
       nav_about: 'About',
       nav_projects: 'Projects',
       nav_services: 'Services',
@@ -1323,6 +1325,7 @@
     });
 
     document.documentElement.setAttribute('data-lang', lang);
+    document.getElementById('page-title').textContent = t.page_title;
   }
 
   const currentLang = detectLang();
