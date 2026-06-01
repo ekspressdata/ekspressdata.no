@@ -10,7 +10,7 @@
 <title>EkspressData — Datakonsulent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<script type="text/javascript" async="" charset="utf-8" src="index_files/recaptcha__no.js" crossorigin="anonymous" integrity="sha384-K9QM1FQNCmkE4VIzDXZ64OgsOQq2DZtHhIvSRCh9tu8E13JZxBPbsNe5udRFhKYS"></script><script src="index_files/api.js"></script>
+<script src="index_files/api.js" async="" defer="defer"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -744,7 +744,7 @@
   }
   footer a:hover { color: var(--orange); }
 
-  .grecaptcha-badge { visibility: hidden; }
+  .cf-turnstile { margin-top: 0.75rem; }
 
   /* PROJECTS BULLET LIST */
   .projects-bullets {
@@ -876,7 +876,7 @@
 <body>
 
 <!-- NAV -->
-<nav id="navbar">
+<nav id="navbar" class="scrolled">
   <a href="#" class="nav-logo">Ekspress<span>Data</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#om">Om</a></li>
@@ -951,19 +951,19 @@ når det haster<sup style="font-size: 0.6em; vertical-align: super;">*</sup>.</p
     <div class="about-grid">
       <div>
         <p class="section-label" style="color: var(--accent);">Om EkspressData</p>
-        <h2 class="section-title reveal">Dokumenterte resultater</h2>
-        <p class="about-text reveal">EkspressData er en selvstendig 
-datakonsulent med spesialkompetanse på ETL, automatisering, Python og 
-system-til-system konvertering — med dokumenterte resultater fra 
-dataprosjekter i offentlig og privat sektor.</p>
-        <p class="about-text reveal">Dere beskriver problemet, EkspressData løser det — med kvalitet.</p>
-        <div class="about-traits reveal">
+        <h2 class="section-title reveal visible">Dokumenterte resultater</h2>
+        <p class="about-text reveal visible">EkspressData er en 
+selvstendig datakonsulent med spesialkompetanse på ETL, automatisering, 
+Python og system-til-system konvertering — med dokumenterte resultater 
+fra dataprosjekter i offentlig og privat sektor.</p>
+        <p class="about-text reveal visible">Dere beskriver problemet, EkspressData løser det — med kvalitet.</p>
+        <div class="about-traits reveal visible">
           <div class="trait"><div class="trait-dot"></div><span>Tilgjengelig på kort varsel — rykker ut når det haster<sup style="font-size: 0.6em; vertical-align: super;">*</sup></span></div>
           <div class="trait"><div class="trait-dot"></div><span>Tar ansvar for hele problemet, ikke bare en avgrenset del</span></div>
           <div class="trait"><div class="trait-dot"></div><span>Unik kompetanse i skjæringspunktet mellom data og offentlige registre</span></div>
         </div>
       </div>
-      <div class="tech-stack reveal">
+      <div class="tech-stack reveal visible">
         <h4>Teknologier</h4>
         <div class="tech-group">
           <div class="tech-group-label">Kjernekompetanse</div>
@@ -1021,7 +1021,7 @@ dataprosjekter i offentlig og privat sektor.</p>
           <span>Rask respons — vanligvis samme dag</span>
         </div>
       </div>
-      <div class="contact-form-card reveal">
+      <div class="contact-form-card reveal visible">
         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="17c1aef0-6f3f-4fdb-a60d-b283782b66e3">
           <input type="hidden" name="subject" value="Ny henvendelse fra ekspressdata.no">
@@ -1044,9 +1044,10 @@ dataprosjekter i offentlig og privat sektor.</p>
             <label for="melding">Hva trenger du hjelp med?</label>
             <textarea id="melding" name="melding" placeholder="Hva er problemet? Jo mer konkret, jo bedre — men det holder med én setning." required=""></textarea>
           </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADcObU_UyrS4xGj3" data-theme="light"><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-6lg14_response" value=""></div></div>
           <button type="submit" class="form-submit">Send henvendelse →</button>
           <p class="form-note">Ingen forpliktelse. Jeg svarer vanligvis innen én arbeidsdag.</p>
-          <p class="form-note" style="margin-top: 0.4rem;">Beskyttet av reCAPTCHA. Googles <a href="https://policies.google.com/privacy" target="_blank" style="color: var(--gray-mid);">personvernregler</a> og <a href="https://policies.google.com/terms" target="_blank" style="color: var(--gray-mid);">vilkår</a> gjelder.</p>
+          <p class="form-note" style="margin-top: 0.4rem;">Beskyttet av Cloudflare Turnstile. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color: var(--gray-mid);">Personvernregler</a>.</p>
         </form>
       </div>
     </div>
@@ -1177,37 +1178,33 @@ som gjør manuell registrering overflødig.</p>
     btn.textContent = 'Sender...';
     btn.disabled = true;
 
-    grecaptcha.ready(function() {
-      grecaptcha.execute('6LdDLAYtAAAAADYsb_Pl_IkL2H0mRQ46oDiBrQAm', {action: 'submit'}).then(function(token) {
-        const formData = new FormData(form);
+    const formData = new FormData(form);
 
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            btn.textContent = '✓ Sendt!';
-            btn.style.background = 'rgb(6, 214, 160)';
-            btn.style.color = '#0f2044';
-            form.reset();
-          } else {
-            btn.textContent = 'Noe gikk galt — prøv igjen';
-            btn.disabled = false;
-            btn.style.background = '#e53e3e';
-          }
-        })
-        .catch(() => {
-          btn.textContent = 'Noe gikk galt — prøv igjen';
-          btn.disabled = false;
-          btn.style.background = '#e53e3e';
-        });
-      });
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        btn.textContent = '✓ Sendt!';
+        btn.style.background = 'rgb(6, 214, 160)';
+        btn.style.color = '#0f2044';
+        form.reset();
+      } else {
+        btn.textContent = 'Noe gikk galt — prøv igjen';
+        btn.disabled = false;
+        btn.style.background = '#e53e3e';
+      }
+    })
+    .catch(() => {
+      btn.textContent = 'Noe gikk galt — prøv igjen';
+      btn.disabled = false;
+      btn.style.background = '#e53e3e';
     });
   });
 </script>
 
 
 
-<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-vlgc3kgm6e48" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="index_files/anchor.htm"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div></body></html>
+</body></html>
