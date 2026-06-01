@@ -885,9 +885,9 @@
 <nav id="navbar">
   <a href="#" class="nav-logo">Ekspress<span>Data</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#om" data-i18n="nav_about">Om</a></li>
-    <li><a href="#prosjekter" data-i18n="nav_projects">Prosjekter</a></li>
     <li><a href="#tjenester" data-i18n="nav_services">Tjenester</a></li>
+    <li><a href="#prosjekter" data-i18n="nav_projects">Prosjekter</a></li>
+    <li><a href="#om" data-i18n="nav_about">Om</a></li>
     <li><a href="#kontakt" class="nav-cta" data-i18n="nav_cta">Ta kontakt</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Åpne meny" data-i18n-aria="nav_menu_aria">
@@ -929,11 +929,9 @@
       <p class="hero-eyebrow" data-i18n="hero_eyebrow">Datakonsulent</p>
       <h1 class="hero-title" data-i18n-html="hero_title">Dataproblemer<br>løst <em>fra A til Å</em></h1>
       <p class="hero-desc" style="margin-bottom: 1.25rem;"><span data-i18n="hero_desc">Data som ikke fungerer som det skal? Systemer som ikke snakker sammen? EkspressData tar det fra start til mål — selv når det haster</span><sup style="font-size: 0.6em; vertical-align: super;">*</sup>.</p>
-      <p style="font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: -1rem; margin-bottom: 0.3rem; line-height: 1.4;" data-i18n="hero_ai_note">Selv med KI tilgjengelig, krever et godt resultat tid, kompetanse, forretningsforståelse, og noen som står ansvarlig.</p>
-      <p style="font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.5rem; margin-bottom: 1.5rem;"><span data-i18n="hero_footnote">* Gjelder kunder med avtale om prioritert respons.</span></p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-primary" data-i18n="hero_cta_primary">Ta kontakt →</a>
-        <a href="#prosjekter" class="btn-secondary" data-i18n="hero_cta_secondary">Se prosjekter</a>
+        <a href="#tjenester" class="btn-secondary" data-i18n="hero_cta_secondary">Se prosjekter</a>
       </div>
 
     </div>
@@ -948,6 +946,67 @@
         &nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">f"<span class="code-num">{len(data)}</span> <span data-i18n="code_rows">rader lastet opp</span>"</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="tjenester">
+  <div class="section-inner">
+    <p class="section-label reveal" data-i18n="services_label">Hva vi leverer</p>
+    <h2 class="section-title reveal" data-i18n="services_title">Tjenester</h2>
+    
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">⚡</div>
+        <h3 data-i18n="s1_title">ETL og datakonvertering</h3>
+        <p data-i18n="s1_desc">Data som sitter fast mellom to systemer. Eksport, transformering, validering og import.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🤖</div>
+        <h3 data-i18n="s2_title">Automatisering og robotisering</h3>
+        <p data-i18n="s2_desc">Repetitive operasjoner mot registre og systemer automatiseres. Du beskriver problemet — EkspressData leverer en løsning som gjør manuell registrering overflødig.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🔍</div>
+        <h3 data-i18n="s3_title">Datakvalitet og integritet</h3>
+        <p data-i18n="s3_desc">Feil, inkonsistenser og mangler i store registre identifiseres og rettes. God datakvalitet er en forutsetning for gode resultater.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📊</div>
+        <h3 data-i18n="s4_title">Visualisering og analyse</h3>
+        <p data-i18n="s4_desc">Data gjort forståelige for beslutningstakere. Interaktive kartverktøy og visualiseringer som kan brukes direkte i møterommet.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">💡</div>
+        <h3 data-i18n="s5_title">Rådgivning</h3>
+        <p data-i18n="s5_desc">Trenger du hjelp til å forstå et dataproblem før du vet hva løsningen er? EkspressData hjelper deg å stille de riktige spørsmålene.</p>
+      </div>
+  </div>
+</section>
+
+<section id="prosjekter">
+  <div class="section-inner">
+    <p class="section-label reveal" data-i18n="projects_label">Dokumenterte resultater</p>
+    <h2 class="section-title reveal" data-i18n="projects_title">Utvalgte prosjekter</h2>
+    
+    <ul class="projects-bullets reveal">
+      <li>
+        <strong data-i18n="p1_title">Robotisert føring i register</strong>
+        <span data-i18n="p1_desc">Programmerte spesialtilpasset Python-robot for masseregistrering — metodikken skapte interesse fra andre større aktører og ble omtalt i fagpresse.</span>
+      </li>
+      <li>
+        <strong data-i18n="p2_title">Problemløsning når det haster</strong>
+        <span data-i18n="p2_desc">Identifiserte en begrensning i antall vedlegg i et dokumentutsendelsessystem og programmerte på ca. 20 minutter en løsning med betydelige økonomiske besparelser.</span>
+      </li>
+      <li>
+        <strong data-i18n="p3_title">Kartvisualisering</strong>
+        <span data-i18n="p3_desc">Utviklet interaktivt kartverktøy til bruk i beslutningsforum.</span>
+        <span class="project-quote-inline"><span data-i18n="p3_quote">"For et fantastisk verktøy"</span> <cite data-i18n="p3_cite">— Medlem av beslutningsforum</cite></span>
+      </li>
+      <li>
+        <strong data-i18n="p4_title">Analyse av eiendomsskatt</strong>
+        <span data-i18n="p4_desc">Avdekket store systematiske feil i utskrevet eiendomsskatt i en større norsk by. Resulterte i medieoppslag og tilbakebetaling av for mye betalt eiendomsskatt til berørte innbyggere.</span>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -1031,72 +1090,6 @@
   </div>
 </section>
 
-<section id="prosjekter">
-  <div class="section-inner">
-    <p class="section-label reveal" data-i18n="projects_label">Dokumenterte resultater</p>
-    <h2 class="section-title reveal" data-i18n="projects_title">Utvalgte prosjekter</h2>
-    <p class="section-intro reveal"></p>
-    <ul class="projects-bullets reveal">
-      <li>
-        <strong data-i18n="p1_title">Robotisert føring i register</strong>
-        <span data-i18n="p1_desc">Programmerte spesialtilpasset Python-robot for masseregistrering — metodikken skapte interesse fra andre større aktører og ble omtalt i fagpresse.</span>
-      </li>
-      <li>
-        <strong data-i18n="p2_title">Problemløsning når det haster</strong>
-        <span data-i18n="p2_desc">Identifiserte en begrensning i antall vedlegg i et dokumentutsendelsessystem og programmerte på ca. 20 minutter en løsning med betydelige økonomiske besparelser.</span>
-      </li>
-      <li>
-        <strong data-i18n="p3_title">Kartvisualisering</strong>
-        <span data-i18n="p3_desc">Utviklet interaktivt kartverktøy til bruk i beslutningsforum.</span>
-        <span class="project-quote-inline"><span data-i18n="p3_quote">"For et fantastisk verktøy"</span> <cite data-i18n="p3_cite">— Medlem av beslutningsforum</cite></span>
-      </li>
-      <li>
-        <strong data-i18n="p4_title">Analyse av eiendomsskatt</strong>
-        <span data-i18n="p4_desc">Avdekket store systematiske feil i utskrevet eiendomsskatt i en større norsk by. Resulterte i medieoppslag og tilbakebetaling av for mye betalt eiendomsskatt til berørte innbyggere.</span>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section id="tjenester">
-  <div class="section-inner">
-    <p class="section-label reveal" data-i18n="services_label">Hva vi leverer</p>
-    <h2 class="section-title reveal" data-i18n="services_title">Tjenester</h2>
-    <p class="section-intro reveal"></p>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">⚡</div>
-        <h3 data-i18n="s1_title">ETL og datakonvertering</h3>
-        <p data-i18n="s1_desc">Data som sitter fast mellom to systemer. Eksport, transformering, validering og import.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🤖</div>
-        <h3 data-i18n="s2_title">Automatisering og robotisering</h3>
-        <p data-i18n="s2_desc">Repetitive operasjoner mot registre og systemer automatiseres. Du beskriver problemet — EkspressData leverer en løsning som gjør manuell registrering overflødig.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🔍</div>
-        <h3 data-i18n="s3_title">Datakvalitet og integritet</h3>
-        <p data-i18n="s3_desc">Feil, inkonsistenser og mangler i store registre identifiseres og rettes. God datakvalitet er en forutsetning for gode resultater.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">📊</div>
-        <h3 data-i18n="s4_title">Visualisering og analyse</h3>
-        <p data-i18n="s4_desc">Data gjort forståelige for beslutningstakere. Interaktive kartverktøy og visualiseringer som kan brukes direkte i møterommet.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">💡</div>
-        <h3 data-i18n="s5_title">Rådgivning</h3>
-        <p data-i18n="s5_desc">Trenger du hjelp til å forstå et dataproblem før du vet hva løsningen er? EkspressData hjelper deg å stille de riktige spørsmålene.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🚀</div>
-        <h3 data-i18n="s6_title">Nettsider og MVP</h3>
-        <p data-i18n="s6_desc">Nettsider og minimum viable products — til nyoppstartede virksomheter og andre som trenger å komme raskt i gang.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 
@@ -1121,7 +1114,7 @@
       hero_footnote: '* Gjelder kunder med avtale om prioritert respons.',
       hero_ai_note: 'Selv med KI tilgjengelig, krever et godt resultat tid, kompetanse, forretningsforståelse, og noen som står ansvarlig.',
       hero_cta_primary: 'Ta kontakt →',
-      hero_cta_secondary: 'Se prosjekter',
+      hero_cta_secondary: 'Se tjenester',
 
       about_label: 'Om EkspressData',
       about_title: 'Dokumenterte resultater',
@@ -1176,8 +1169,7 @@
       s6_desc: 'Nettsider og minimum viable products — til nyoppstartede virksomheter og andre som trenger å komme raskt i gang.',
       services_label: 'Hva vi leverer',
       services_title: 'Tjenester',
-      services_title: 'Tjenester',
-      s1_title: 'ETL og datakonvertering',
+            s1_title: 'ETL og datakonvertering',
       s1_desc: 'Data som sitter fast mellom to systemer. Eksport, transformering, validering og import.',
       s2_title: 'Automatisering og robotisering',
       s2_desc: 'Repetitive operasjoner mot registre og systemer automatiseres. Du beskriver problemet — EkspressData leverer en løsning som gjør manuell registrering overflødig.',
@@ -1213,7 +1205,7 @@
       hero_footnote: '* Applies to clients with a priority response agreement.',
       hero_ai_note: 'Even with AI available, a result you can trust requires time, expertise, business understanding, and someone who takes responsibility.',
       hero_cta_primary: 'Get in touch →',
-      hero_cta_secondary: 'View projects',
+      hero_cta_secondary: 'View services',
 
       about_label: 'About EkspressData',
       about_title: 'Proven results',
@@ -1268,8 +1260,7 @@
       s6_desc: 'Websites and minimum viable products — for startups and others who need to get up and running quickly.',
       services_label: 'What we deliver',
       services_title: 'Services',
-      services_title: 'Services',
-      s1_title: 'ETL and data conversion',
+            s1_title: 'ETL and data conversion',
       s1_desc: 'Data stuck between two systems. Export, transformation, validation and import.',
       s2_title: 'Automation and robotisation',
       s2_desc: 'Repetitive operations against registers and systems are automated. You describe the problem — EkspressData delivers a solution that eliminates manual registration.',
