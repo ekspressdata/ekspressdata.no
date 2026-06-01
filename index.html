@@ -8,6 +8,7 @@
 <meta property="og:title" content="EkspressData — Datakonsulent">
 <meta property="og:description" content="Komplekse dataproblemer løst fra start til mål. ETL, automatisering og Python med dokumenterte resultater.">
 <title>EkspressData — Datakonsulent</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f2044'/><text x='5' y='21' font-family='Arial Black,sans-serif' font-weight='900' font-size='15' fill='white'>E</text><text x='16' y='21' font-family='Arial Black,sans-serif' font-weight='900' font-size='15' fill='%2306d6a0'>D</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
@@ -332,6 +333,7 @@
 
   /* SECTIONS */
   section { padding: 6rem clamp(1.5rem, 5vw, 3rem); }
+  #om { padding-top: 1.5rem; }
 
   .section-inner {
     max-width: var(--max);
@@ -613,10 +615,13 @@
   #kontakt { background: var(--gray-light); }
 
   .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 4rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
   }
 
   .contact-info h2 {
@@ -661,6 +666,7 @@
     padding: 2.5rem;
     border: 1px solid var(--border);
     box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    width: 100%;
   }
 
   .form-row {
@@ -827,8 +833,7 @@
     .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .stat-number { font-size: 1.4rem; }
 
-    .about-grid,
-    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
     .project-card {
       grid-template-columns: auto 1fr;
@@ -879,12 +884,12 @@
 <nav id="navbar">
   <a href="#" class="nav-logo">Ekspress<span>Data</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#om">Om</a></li>
-    <li><a href="#prosjekter">Prosjekter</a></li>
-    <li><a href="#tjenester">Tjenester</a></li>
-    <li><a href="#kontakt" class="nav-cta">Ta kontakt</a></li>
+    <li><a href="#om" data-i18n="nav_about">Om</a></li>
+    <li><a href="#prosjekter" data-i18n="nav_projects">Prosjekter</a></li>
+    <li><a href="#tjenester" data-i18n="nav_services">Tjenester</a></li>
+    <li><a href="#kontakt" class="nav-cta" data-i18n="nav_cta">Ta kontakt</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Åpne meny">
+  <button class="nav-hamburger" id="hamburger" aria-label="Åpne meny" data-i18n-aria="nav_menu_aria">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -920,25 +925,26 @@
   </div>
   <div class="hero-grid">
     <div class="hero-left">
-      <p class="hero-eyebrow">Datakonsulent</p>
-      <h1 class="hero-title">Dataproblemer<br>løst <em>fra A til Å</em></h1>
-      <p class="hero-desc">Data som ikke fungerer som det skal? Systemer som ikke snakker sammen? EkspressData tar det fra start til mål — selv når det haster<sup style="font-size: 0.6em; vertical-align: super;">*</sup>.</p>
-      <p style="font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: -1rem; margin-bottom: 1rem;">* Gjelder kunder med avtale om prioritert respons.</p>
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Datakonsulent</p>
+      <h1 class="hero-title" data-i18n-html="hero_title">Dataproblemer<br>løst <em>fra A til Å</em></h1>
+      <p class="hero-desc" style="margin-bottom: 1.25rem;"><span data-i18n="hero_desc">Data som ikke fungerer som det skal? Systemer som ikke snakker sammen? EkspressData tar det fra start til mål — selv når det haster</span><sup style="font-size: 0.6em; vertical-align: super;">*</sup>.</p>
+      <p style="font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: -1rem; margin-bottom: 0.3rem; line-height: 1.4;" data-i18n="hero_ai_note">Selv med KI tilgjengelig, krever et godt resultat tid, kompetanse, forretningsforståelse, og noen som står ansvarlig.</p>
+      <p style="font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.5rem; margin-bottom: 1.5rem;"><span data-i18n="hero_footnote">* Gjelder kunder med avtale om prioritert respons.</span></p>
       <div class="hero-actions">
-        <a href="#kontakt" class="btn-primary">Ta kontakt →</a>
-        <a href="#prosjekter" class="btn-secondary">Se prosjekter</a>
+        <a href="#kontakt" class="btn-primary" data-i18n="hero_cta_primary">Ta kontakt →</a>
+        <a href="#prosjekter" class="btn-secondary" data-i18n="hero_cta_secondary">Se prosjekter</a>
       </div>
 
     </div>
     <div class="hero-visual">
       <div class="code-card">
-        <span class="code-comment"># ETL-pipeline: kilde → mål</span><br>
-        <span class="code-keyword">def</span> <span class="code-fn">kjør_pipeline</span>(kilde, mål):<br>
-        &nbsp;&nbsp;data = <span class="code-fn">hent_data</span>(kilde)<br>
-        &nbsp;&nbsp;data = <span class="code-fn">transformer</span>(data)<br>
-        &nbsp;&nbsp;data = <span class="code-fn">valider_kvalitet</span>(data)<br>
-        &nbsp;&nbsp;<span class="code-fn">last_opp</span>(data, mål)<br>
-        &nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">f"<span class="code-num">{len(data)}</span> rader lastet opp"</span>
+        <span class="code-comment" data-i18n-html="code_comment"># ETL-pipeline: kilde → mål</span><br>
+        <span class="code-keyword">def</span> <span class="code-fn" data-i18n="code_fn_name">kjør_pipeline</span>(<span data-i18n="code_params">kilde, mål</span>):<br>
+        &nbsp;&nbsp;data = <span class="code-fn" data-i18n="code_fn_fetch">hent_data</span>(<span data-i18n="code_param1">kilde</span>)<br>
+        &nbsp;&nbsp;data = <span class="code-fn" data-i18n="code_fn_transform">transformer</span>(data)<br>
+        &nbsp;&nbsp;data = <span class="code-fn" data-i18n="code_fn_validate">valider_kvalitet</span>(data)<br>
+        &nbsp;&nbsp;<span class="code-fn" data-i18n="code_fn_load">last_opp</span>(data, <span data-i18n="code_param2">mål</span>)<br>
+        &nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">f"<span class="code-num">{len(data)}</span> <span data-i18n="code_rows">rader lastet opp</span>"</span>
       </div>
     </div>
   </div>
@@ -948,20 +954,18 @@
   <div class="section-inner">
     <div class="about-grid">
       <div>
-        <p class="section-label" style="color: var(--accent);">Om EkspressData</p>
-        <h2 class="section-title reveal">Dokumenterte resultater</h2>
-        <p class="about-text reveal">EkspressData er en selvstendig datakonsulent med spesialkompetanse på ETL, automatisering, Python og system-til-system konvertering — med dokumenterte resultater fra dataprosjekter i offentlig og privat sektor.</p>
-        <p class="about-text reveal">Dere beskriver problemet, EkspressData løser det — med kvalitet.</p>
-        <div class="about-traits reveal">
-          <div class="trait"><div class="trait-dot"></div><span>Tilgjengelig på kort varsel — rykker ut når det haster<sup style="font-size: 0.6em; vertical-align: super;">*</sup></span></div>
-          <div class="trait"><div class="trait-dot"></div><span>Tar ansvar for hele problemet, ikke bare en avgrenset del</span></div>
-          <div class="trait"><div class="trait-dot"></div><span>Unik kompetanse i skjæringspunktet mellom data og offentlige registre</span></div>
+        <p class="section-label" style="color: var(--accent);" data-i18n="about_label">Om EkspressData</p>
+        <h2 class="section-title reveal" data-i18n="about_title">Dokumenterte resultater</h2>
+        <p class="about-text reveal" data-i18n="about_p1">EkspressData har spesialkompetanse på ETL, automatisering, Python og system-til-system konvertering — med dokumenterte resultater fra dataprosjekter i offentlig og privat sektor.</p><div class="about-traits reveal">
+          <div class="trait"><div class="trait-dot"></div><span data-i18n-html="trait1">Tilgjengelig på kort varsel — også når det haster<sup style="font-size: 0.6em; vertical-align: super;">*</sup></span></div>
+          <div class="trait"><div class="trait-dot"></div><span data-i18n="trait2">Tar ansvar for hele problemet, ikke bare en avgrenset del</span></div>
+          <div class="trait"><div class="trait-dot"></div><span data-i18n="trait3">Unik kompetanse i skjæringspunktet mellom data og offentlige registre</span></div>
         </div>
       </div>
       <div class="tech-stack reveal">
-        <h4>Teknologier</h4>
+        <h4 data-i18n="tech_title">Teknologier</h4>
         <div class="tech-group">
-          <div class="tech-group-label">Kjernekompetanse</div>
+          <div class="tech-group-label" data-i18n="tech_core">Kjernekompetanse</div>
           <div class="tech-pills">
             <span class="tech-pill primary">Python</span>
             <span class="tech-pill primary">Pandas</span>
@@ -969,31 +973,17 @@
             <span class="tech-pill primary">ETL</span>
             <span class="tech-pill primary">FME</span>
             <span class="tech-pill primary">Matrikkelen</span>
+            <span class="tech-pill primary">RPA</span>
           </div>
         </div>
         <div class="tech-group">
-          <div class="tech-group-label">Analyse og visualisering</div>
+          <div class="tech-group-label" data-i18n="tech_other">Annet</div>
           <div class="tech-pills">
             <span class="tech-pill">R</span>
             <span class="tech-pill">IBM SPSS</span>
-            <span class="tech-pill">Business Intelligence</span>
-            <span class="tech-pill">Data Visualization</span>
-          </div>
-        </div>
-        <div class="tech-group">
-          <div class="tech-group-label">Web og frontend</div>
-          <div class="tech-pills">
-            <span class="tech-pill">HTML</span>
-            <span class="tech-pill">CSS</span>
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">PHP</span>
-          </div>
-        </div>
-        <div class="tech-group">
-          <div class="tech-group-label">KI-verktøy</div>
-          <div class="tech-pills">
-            <span class="tech-pill">Claude / LLM</span>
-            <span class="tech-pill">AI-assistert koding</span>
+            <span class="tech-pill" data-i18n="tech_analysis">Analyse og visualisering</span>
+            <span class="tech-pill" data-i18n="tech_frontend">Frontend</span>
+            <span class="tech-pill" data-i18n="tech_ai">KI-verktøy</span>
           </div>
         </div>
       </div>
@@ -1005,16 +995,8 @@
   <div class="section-inner">
     <div class="contact-grid">
       <div>
-        <p class="section-label">Kom i gang</p>
-        <h2 class="contact-info" style="font-family: 'Syne', sans-serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 1rem;">Har du et<br>dataproblem nå?</h2>
-        <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
-          <span>Stavanger · Remote tilgjengelig</span>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">⚡</div>
-          <span>Rask respons — vanligvis samme dag</span>
-        </div>
+        <p class="section-label" data-i18n="contact_label">Kom i gang</p>
+        <h2 class="contact-info" style="font-family: 'Syne', sans-serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 1rem;" data-i18n="contact_title">Hva kan vi hjelpe deg med?</h2>
       </div>
       <div class="contact-form-card reveal">
         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
@@ -1023,25 +1005,25 @@
           <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-row">
             <div class="form-group">
-              <label for="navn">Navn</label>
-              <input type="text" id="navn" name="navn" placeholder="Ditt navn" required>
+              <label for="navn" data-i18n="form_name">Navn</label>
+              <input type="text" id="navn" name="navn" data-i18n-placeholder="form_name_ph" placeholder="Ditt navn" required>
             </div>
             <div class="form-group">
-              <label for="epost">E-post</label>
-              <input type="email" id="epost" name="epost" placeholder="Din e-post" required>
+              <label for="epost" data-i18n="form_email">E-post</label>
+              <input type="email" id="epost" name="epost" data-i18n-placeholder="form_email_ph" placeholder="Din e-post" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="bedrift">Bedrift / organisasjon</label>
-            <input type="text" id="bedrift" name="bedrift" placeholder="Valgfritt">
+            <label for="bedrift" data-i18n="form_company">Bedrift / organisasjon</label>
+            <input type="text" id="bedrift" name="bedrift" data-i18n-placeholder="form_company_ph" placeholder="Valgfritt">
           </div>
           <div class="form-group">
-            <label for="melding">Hva trenger du hjelp med?</label>
-            <textarea id="melding" name="melding" placeholder="Hva er problemet? Jo mer konkret, jo bedre — men det holder med én setning." required></textarea>
+            <label for="melding" data-i18n="form_message">Hva trenger du hjelp med?</label>
+            <textarea id="melding" name="melding" data-i18n-placeholder="form_message_ph" placeholder="Hva er problemet? Jo mer konkret, jo bedre — men det holder med én setning." required></textarea>
           </div>
           <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
-          <button type="submit" class="form-submit">Send henvendelse →</button>
-          <p class="form-note">Ingen forpliktelse. Jeg svarer vanligvis innen én arbeidsdag.</p>
+          <button type="submit" class="form-submit" data-i18n="form_submit">Send henvendelse →</button>
+          <p class="form-note" data-i18n="form_note">Ingen forpliktelse. Vi svarer vanligvis innen én arbeidsdag.</p>
           <p class="form-note" style="margin-top: 0.4rem;">Beskyttet av hCaptcha. <a href="https://hcaptcha.com/privacy" target="_blank" style="color: var(--gray-mid);">Personvernregler</a>.</p>
         </form>
       </div>
@@ -1051,26 +1033,26 @@
 
 <section id="prosjekter">
   <div class="section-inner">
-    <p class="section-label reveal">Dokumenterte resultater</p>
-    <h2 class="section-title reveal">Utvalgte prosjekter</h2>
+    <p class="section-label reveal" data-i18n="projects_label">Dokumenterte resultater</p>
+    <h2 class="section-title reveal" data-i18n="projects_title">Utvalgte prosjekter</h2>
     <p class="section-intro reveal"></p>
     <ul class="projects-bullets reveal">
       <li>
-        <strong>Robotisert føring i register</strong>
-        Programmerte spesialtilpasset Python-robot for masseregistrering — metodikken skapte interesse fra andre større aktører og ble omtalt i fagpresse.
+        <strong data-i18n="p1_title">Robotisert føring i register</strong>
+        <span data-i18n="p1_desc">Programmerte spesialtilpasset Python-robot for masseregistrering — metodikken skapte interesse fra andre større aktører og ble omtalt i fagpresse.</span>
       </li>
       <li>
-        <strong>Problemløsning når det haster</strong>
-        Identifiserte en begrensning i antall vedlegg i et dokumentutsendelsessystem og programmerte på ca. 20 minutter en løsning med estimert besparelse i 100.000 kroners klassen.
+        <strong data-i18n="p2_title">Problemløsning når det haster</strong>
+        <span data-i18n="p2_desc">Identifiserte en begrensning i antall vedlegg i et dokumentutsendelsessystem og programmerte på ca. 20 minutter en løsning med betydelige økonomiske besparelser.</span>
       </li>
       <li>
-        <strong>Kartvisualisering</strong>
-        Utviklet interaktivt kartverktøy til bruk i beslutningsforum.
-        <span class="project-quote-inline">"For et fantastisk verktøy" <cite>— Medlem av beslutningsforum</cite></span>
+        <strong data-i18n="p3_title">Kartvisualisering</strong>
+        <span data-i18n="p3_desc">Utviklet interaktivt kartverktøy til bruk i beslutningsforum.</span>
+        <span class="project-quote-inline"><span data-i18n="p3_quote">"For et fantastisk verktøy"</span> <cite data-i18n="p3_cite">— Medlem av beslutningsforum</cite></span>
       </li>
       <li>
-        <strong>Analyse av eiendomsskatt</strong>
-        Avdekket store systematiske feil i utskrevet eiendomsskatt i en større norsk by. Resulterte i medieoppslag og tilbakebetaling av for mye betalt eiendomsskatt til berørte innbyggere.
+        <strong data-i18n="p4_title">Analyse av eiendomsskatt</strong>
+        <span data-i18n="p4_desc">Avdekket store systematiske feil i utskrevet eiendomsskatt i en større norsk by. Resulterte i medieoppslag og tilbakebetaling av for mye betalt eiendomsskatt til berørte innbyggere.</span>
       </li>
     </ul>
   </div>
@@ -1078,41 +1060,39 @@
 
 <section id="tjenester">
   <div class="section-inner">
-    <p class="section-label reveal">Hva jeg leverer</p>
-    <h2 class="section-title reveal">Tjenester</h2>
+    <p class="section-label reveal" data-i18n="services_label">Hva vi leverer</p>
+    <h2 class="section-title reveal" data-i18n="services_title">Tjenester</h2>
     <p class="section-intro reveal"></p>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon">⚡</div>
-        <h3>ETL og datakonvertering</h3>
-        <p>Data som sitter fast mellom to systemer. Eksport, transformering, validering og import.</p>
-        <div class="service-tags">
-          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span><span class="tag">FME</span>
-        </div>
+        <h3 data-i18n="s1_title">ETL og datakonvertering</h3>
+        <p data-i18n="s1_desc">Data som sitter fast mellom to systemer. Eksport, transformering, validering og import.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">🤖</div>
-        <h3>Automatisering og robotisering</h3>
-        <p>Repetitive operasjoner mot registre og systemer automatiseres. Du beskriver problemet — EkspressData leverer en løsning som gjør manuell registrering overflødig.</p>
-        <div class="service-tags">
-          <span class="tag">Python</span><span class="tag">RPA</span><span class="tag">Automatisering</span>
-        </div>
+        <h3 data-i18n="s2_title">Automatisering og robotisering</h3>
+        <p data-i18n="s2_desc">Repetitive operasjoner mot registre og systemer automatiseres. Du beskriver problemet — EkspressData leverer en løsning som gjør manuell registrering overflødig.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">🔍</div>
-        <h3>Datakvalitet og integritet</h3>
-        <p>Feil i store registre identifiseres og rettes.</p>
-        <div class="service-tags">
-          <span class="tag">Dataanalyse</span><span class="tag">Validering</span><span class="tag">SQL</span>
-        </div>
+        <h3 data-i18n="s3_title">Datakvalitet og integritet</h3>
+        <p data-i18n="s3_desc">Feil, inkonsistenser og mangler i store registre identifiseres og rettes. God datakvalitet er en forutsetning for gode resultater.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">📊</div>
-        <h3>Visualisering og analyse</h3>
-        <p>Data gjort forståelige for beslutningstakere. Interaktive kartverktøy og visualiseringer som kan brukes direkte i møterommet.</p>
-        <div class="service-tags">
-          <span class="tag">R</span><span class="tag">HTML/JS</span><span class="tag">Kartvisualisering</span>
-        </div>
+        <h3 data-i18n="s4_title">Visualisering og analyse</h3>
+        <p data-i18n="s4_desc">Data gjort forståelige for beslutningstakere. Interaktive kartverktøy og visualiseringer som kan brukes direkte i møterommet.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">💡</div>
+        <h3 data-i18n="s5_title">Rådgivning</h3>
+        <p data-i18n="s5_desc">Trenger du hjelp til å forstå et dataproblem før du vet hva løsningen er? EkspressData hjelper deg å stille de riktige spørsmålene.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🚀</div>
+        <h3 data-i18n="s6_title">Nettsider og MVP</h3>
+        <p data-i18n="s6_desc">Nettsider og minimum viable products — til nyoppstartede virksomheter og andre som trenger å komme raskt i gang.</p>
       </div>
     </div>
   </div>
@@ -1122,16 +1102,233 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© <span id="footer-year"></span> EkspressData · Stavanger, Norge · Org.nr. 935 042 267</p>
-  <p style="margin-top: 0.5rem;">
-    <a href="https://www.linkedin.com/company/ekspressdata" target="_blank" rel="noopener" aria-label="LinkedIn" style="display: inline-flex; align-items: center; gap: 0.4rem;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      LinkedIn
-    </a>
-  </p>
+  <p>© <span id="footer-year"></span> EkspressData · Stavanger, Norge · <span data-i18n="footer_regnr">Org.nr.</span> 935 042 267</p>
 </footer>
 <script>
-  const navbar = document.getElementById('navbar');
+  // ── i18n ──────────────────────────────────────────────────────────
+  const translations = {
+    no: {
+      nav_about: 'Om',
+      nav_projects: 'Prosjekter',
+      nav_services: 'Tjenester',
+      nav_cta: 'Ta kontakt',
+      nav_menu_aria: 'Åpne meny',
+
+      hero_eyebrow: 'Datakonsulent',
+      hero_title: 'Dataproblemer<br>løst <em>fra A til Å</em>',
+      hero_desc: 'Data som ikke fungerer som det skal? Systemer som ikke snakker sammen? EkspressData tar det fra start til mål — selv når det haster',
+      hero_footnote: '* Gjelder kunder med avtale om prioritert respons.',
+      hero_ai_note: 'Selv med KI tilgjengelig, krever et godt resultat tid, kompetanse, forretningsforståelse, og noen som står ansvarlig.',
+      hero_cta_primary: 'Ta kontakt →',
+      hero_cta_secondary: 'Se prosjekter',
+
+      about_label: 'Om EkspressData',
+      about_title: 'Dokumenterte resultater',
+      about_p1: 'EkspressData har spesialkompetanse på ETL, automatisering, Python og system-til-system konvertering — med dokumenterte resultater fra dataprosjekter i offentlig og privat sektor.',
+      about_p2: 'Du beskriver problemet — EkspressData tar eierskap og løser det. Selv om KI er tilgjengelig, krever et resultat du kan stole på tid, kompetanse og forretningsforståelse.',
+      trait1: 'Tilgjengelig på kort varsel — også når det haster<sup style="font-size:0.6em;vertical-align:super;">*</sup>',
+      trait2: 'Tar ansvar for hele problemet, ikke bare en avgrenset del',
+      trait3: 'Unik kompetanse i skjæringspunktet mellom data og offentlige registre',
+      tech_title: 'Teknologier',
+      tech_core: 'Kjernekompetanse',
+      tech_other: 'Annet',
+      tech_analysis: 'Analyse og visualisering',
+      tech_frontend: 'Frontend',
+      tech_ai: 'KI-verktøy',
+
+      contact_label: 'Kom i gang',
+      contact_title: 'Hva kan vi hjelpe deg med?',
+      contact_help: 'Hva kan vi hjelpe deg med?',
+      contact_location: 'Stavanger · Remote tilgjengelig',
+      contact_response: 'Rask respons — vanligvis samme dag',
+      form_name: 'Navn',
+      form_name_ph: 'Ditt navn',
+      form_email: 'E-post',
+      form_email_ph: 'Din e-post',
+      form_company: 'Bedrift / organisasjon',
+      form_company_ph: 'Valgfritt',
+      form_message: 'Hva trenger du hjelp med?',
+      form_message_ph: 'Hva er problemet? Jo mer konkret, jo bedre — men det holder med én setning.',
+      form_submit: 'Send henvendelse →',
+      form_note: 'Ingen forpliktelse. Vi svarer vanligvis innen én arbeidsdag.',
+      form_sending: 'Sender...',
+      form_sent: '✓ Sendt!',
+      form_error_captcha: 'Du må krysse av for at du er et menneske — prøv igjen',
+      form_error: 'Noe gikk galt — prøv igjen',
+
+      projects_label: 'Dokumenterte resultater',
+      projects_title: 'Utvalgte prosjekter',
+      p1_title: 'Robotisert føring i register',
+      p1_desc: 'Programmerte spesialtilpasset Python-robot for masseregistrering — metodikken skapte interesse fra andre større aktører og ble omtalt i fagpresse.',
+      p2_title: 'Problemløsning når det haster',
+      p2_desc: 'Identifiserte en begrensning i antall vedlegg i et dokumentutsendelsessystem og programmerte på ca. 20 minutter en løsning med betydelige økonomiske besparelser.',
+      p3_title: 'Kartvisualisering',
+      p3_desc: 'Utviklet interaktivt kartverktøy til bruk i beslutningsforum.',
+      p3_quote: '"For et fantastisk verktøy"',
+      p3_cite: '— Medlem av beslutningsforum',
+      p4_title: 'Analyse av eiendomsskatt',
+      p4_desc: 'Avdekket store systematiske feil i utskrevet eiendomsskatt i en større norsk by. Resulterte i medieoppslag og tilbakebetaling av for mye betalt eiendomsskatt til berørte innbyggere.',
+
+      s5_title: 'Rådgivning',
+      s5_desc: 'Trenger du hjelp til å forstå et dataproblem før du vet hva løsningen er? EkspressData hjelper deg å stille de riktige spørsmålene.',
+      s6_title: 'Nettsider og MVP',
+      s6_desc: 'Nettsider og minimum viable products — til nyoppstartede virksomheter og andre som trenger å komme raskt i gang.',
+      services_label: 'Hva vi leverer',
+      services_title: 'Tjenester',
+      services_title: 'Tjenester',
+      s1_title: 'ETL og datakonvertering',
+      s1_desc: 'Data som sitter fast mellom to systemer. Eksport, transformering, validering og import.',
+      s2_title: 'Automatisering og robotisering',
+      s2_desc: 'Repetitive operasjoner mot registre og systemer automatiseres. Du beskriver problemet — EkspressData leverer en løsning som gjør manuell registrering overflødig.',
+      s3_title: 'Datakvalitet og integritet',
+      s3_desc: 'Feil, inkonsistenser og mangler i store registre identifiseres og rettes. God datakvalitet er en forutsetning for gode resultater.',
+      s4_title: 'Visualisering og analyse',
+      s4_desc: 'Data gjort forståelige for beslutningstakere. Interaktive kartverktøy og visualiseringer som kan brukes direkte i møterommet.',
+
+      footer_regnr: 'Org.nr.',
+      code_comment: '# ETL-pipeline: kilde → mål',
+      code_fn_name: 'kjør_pipeline',
+      code_params: 'kilde, mål',
+      code_fn_fetch: 'hent_data',
+      code_param1: 'kilde',
+      code_fn_validate: 'valider_kvalitet',
+      code_fn_transform: 'transformer',
+      code_fn_load: 'last_opp',
+      code_param2: 'mål',
+      code_rows: 'rader lastet opp',
+    },
+
+    en: {
+      nav_about: 'About',
+      nav_projects: 'Projects',
+      nav_services: 'Services',
+      nav_cta: 'Get in touch',
+      nav_menu_aria: 'Open menu',
+
+      hero_eyebrow: 'Data Consultant',
+      hero_title: 'Data problems<br>solved <em>end to end</em>',
+      hero_desc: 'Data not working as it should? Systems that won\'t talk to each other? EkspressData takes it from start to finish — even when it\'s urgent',
+      hero_footnote: '* Applies to clients with a priority response agreement.',
+      hero_ai_note: 'Even with AI available, a result you can trust requires time, expertise, business understanding, and someone who takes responsibility.',
+      hero_cta_primary: 'Get in touch →',
+      hero_cta_secondary: 'View projects',
+
+      about_label: 'About EkspressData',
+      about_title: 'Proven results',
+      about_p1: 'EkspressData specialises in ETL, automation, Python and system-to-system conversion — with proven results from data projects in the public and private sector.',
+      about_p2: 'You describe the problem — EkspressData takes ownership and solves it. Even though AI is widely available, delivering a result you can trust requires time, expertise and business understanding.',
+      trait1: 'Available at short notice — ready to step in when it\'s urgent<sup style="font-size:0.6em;vertical-align:super;">*</sup>',
+      trait2: 'Takes ownership of the entire problem, not just a defined portion',
+      trait3: 'Documented results from data projects in both the public and private sector',
+      tech_title: 'Technologies',
+      tech_core: 'Core competencies',
+      tech_other: 'Other',
+      tech_analysis: 'Analysis and visualisation',
+      tech_frontend: 'Frontend',
+      tech_ai: 'AI tools',
+
+      contact_label: 'Get started',
+      contact_title: 'What can we help you with?',
+      contact_help: 'What can we help you with?',
+      contact_location: 'Stavanger · Available remotely',
+      contact_response: 'Fast response — usually the same day',
+      form_name: 'Name',
+      form_name_ph: 'Your name',
+      form_email: 'Email',
+      form_email_ph: 'Your email',
+      form_company: 'Company / organisation',
+      form_company_ph: 'Optional',
+      form_message: 'What do you need help with?',
+      form_message_ph: 'What is the problem? The more specific, the better — but one sentence is enough.',
+      form_submit: 'Send message →',
+      form_note: 'No obligation. We usually respond within one working day.',
+      form_sending: 'Sending...',
+      form_sent: '✓ Sent!',
+      form_error_captcha: 'Please confirm you are human — try again',
+      form_error: 'Something went wrong — please try again',
+
+      projects_label: 'Proven results',
+      projects_title: 'Selected projects',
+      p1_title: 'Automated register maintenance',
+      p1_desc: 'Developed a custom Python robot for mass registration — the methodology attracted interest from other major organisations and was featured in trade press.',
+      p2_title: 'Problem-solving under pressure',
+      p2_desc: 'Identified a limitation in the number of attachments in a document distribution system and programmed a solution in approximately 20 minutes, resulting in significant cost savings.',
+      p3_title: 'Map visualisation',
+      p3_desc: 'Developed an interactive map tool for use in decision-making forums.',
+      p3_quote: '"What a fantastic tool"',
+      p3_cite: '— Member of decision-making forum',
+      p4_title: 'Property tax analysis',
+      p4_desc: 'Uncovered significant systematic errors in assessed property tax in a major Norwegian city. Led to media coverage and repayment of overpaid property tax to affected residents.',
+
+      s5_title: 'Advisory',
+      s5_desc: 'Need help understanding a data problem before you know what the solution is? EkspressData helps you ask the right questions.',
+      s6_title: 'Websites and MVP',
+      s6_desc: 'Websites and minimum viable products — for startups and others who need to get up and running quickly.',
+      services_label: 'What we deliver',
+      services_title: 'Services',
+      services_title: 'Services',
+      s1_title: 'ETL and data conversion',
+      s1_desc: 'Data stuck between two systems. Export, transformation, validation and import.',
+      s2_title: 'Automation and robotisation',
+      s2_desc: 'Repetitive operations against registers and systems are automated. You describe the problem — EkspressData delivers a solution that eliminates manual registration.',
+      s3_title: 'Data quality and integrity',
+      s3_desc: 'Errors, inconsistencies and gaps in large registers are identified and corrected. Good data quality is a prerequisite for good results.',
+      s4_title: 'Visualisation and analysis',
+      s4_desc: 'Data made understandable for decision-makers. Interactive map tools and visualisations ready to use directly in the boardroom.',
+
+      footer_regnr: 'Reg. no.',
+      code_comment: '# ETL pipeline: source → target',
+      code_fn_name: 'run_pipeline',
+      code_params: 'source, target',
+      code_fn_fetch: 'fetch',
+      code_param1: 'source',
+      code_fn_validate: 'validate',
+      code_fn_transform: 'transform',
+      code_fn_load: 'load',
+      code_param2: 'target',
+      code_rows: 'rows loaded',
+    }
+  };
+
+  function detectLang() {
+    const langs = navigator.languages || [navigator.language || 'no'];
+    for (const l of langs) {
+      if (l.startsWith('en')) return 'en';
+      if (l.startsWith('no') || l.startsWith('nb') || l.startsWith('nn')) return 'no';
+    }
+    return 'no';
+  }
+
+  function applyTranslations(lang) {
+    const t = translations[lang] || translations.no;
+    document.documentElement.lang = lang === 'en' ? 'en' : 'nb';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+    });
+
+    document.documentElement.setAttribute('data-lang', lang);
+  }
+
+  const currentLang = detectLang();
+  applyTranslations(currentLang);
+  // ── end i18n ───────────────────────────────────────────────────────
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 30);
   });
@@ -1162,7 +1359,9 @@
     e.preventDefault();
     const form = this;
     const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sender...';
+    const lang = document.documentElement.getAttribute('data-lang') || 'no';
+    const t = translations[lang] || translations.no;
+    btn.textContent = t.form_sending;
     btn.disabled = true;
 
     const formData = new FormData(form);
@@ -1174,22 +1373,22 @@
     .then(res => res.json())
     .then(data => {
       if (data.success) {
-        btn.textContent = '✓ Sendt!';
+        btn.textContent = t.form_sent;
         btn.style.background = 'rgb(6, 214, 160)';
         btn.style.color = '#0f2044';
         form.reset();
       } else if (data.message && data.message.toLowerCase().includes('captcha')) {
-        btn.textContent = 'Du må krysse av for at du er et menneske — prøv igjen';
+        btn.textContent = t.form_error_captcha;
         btn.disabled = false;
         btn.style.background = '#e53e3e';
       } else {
-        btn.textContent = 'Noe gikk galt — prøv igjen';
+        btn.textContent = t.form_error;
         btn.disabled = false;
         btn.style.background = '#e53e3e';
       }
     })
     .catch(() => {
-      btn.textContent = 'Noe gikk galt — prøv igjen';
+      btn.textContent = t.form_error;
       btn.disabled = false;
       btn.style.background = '#e53e3e';
     });
